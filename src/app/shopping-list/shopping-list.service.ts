@@ -16,10 +16,13 @@ export class ShoppingListService {
 
 
 
-  addIngredients(newIng: Ingredient){
+  addIngredient(newIng: Ingredient){
     this.ingredients.push(newIng);
     this.ingredientsChanged.emit(this.ingredients.slice());
   }
 
+  addIngredients(ingredients: Ingredient[]){
+    this.ingredients.push(...ingredients);
+  }
 
 }
